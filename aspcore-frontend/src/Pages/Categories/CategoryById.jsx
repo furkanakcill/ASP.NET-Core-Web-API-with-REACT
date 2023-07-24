@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { deleteCategory, findCategories} from "../../api/CategoryApi";
-import { Link } from "react-router-dom";
+import { findCategory, findCategoryById} from "../../api/CategoryApi";
+import { Link, useParams } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-const HomeCategory = () => {
-  const [categories, setCategories] = useState(false);
+const CategoryById = () => {
+  const { id } = useParams();
+  const [category, setCategory] = useState(null);
 
   useEffect(() => {
-    findCategories(setCategories);
-  }, []);
+    const fetchCategoryData = async () => {
+      try {
+        const categoryData = await findCategory(id);
+        setCategory(categoryData);
+      } catch (error) {
+        // İstek sırasında bir hata oluştuğunda buraya düşer
+        // Hata işleme kodları burada yer alabilir
+        console.log(error);
+      }
+    };
 
-  const deleteHandle = (id) => {
-    deleteCategory(id);
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
-  };
+    fetchCategoryData();
+  }, [id]);
 
   return (
     
@@ -45,40 +50,22 @@ const HomeCategory = () => {
     <br /><br />
       <div className="d-flex align-items-center mb-5">
         <h5>Kategori Listesi</h5>
-        <div className="ms-auto">
-          <Link to="/categories/create" className="btn btn-primary">
-            Yeni Ekle
-          </Link>
-        </div>
       </div>
       <div className="table">
         <thead className="table-dark">
           <tr>
+            <th>Id</th>           
             <th>Ad</th>
             <th>Tanım</th>
-            <th>İşlemler</th>
           </tr>
         </thead>
         <tbody>
-          {categories ? (
-            categories.map((item, index) => (
+          {category ? (
+            category.map((item, index) => (
               <tr key={index}>
+                <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.description}</td>
-                <td>
-                  <Link
-                    to={`/categories/edit/${item.id}`}
-                    className="btn btn-primary me-2"
-                  >
-                    Düzenle
-                  </Link>
-                  <button
-                    onClick={() => deleteHandle(item.id)}
-                    className="btn btn-danger me-2"
-                  >
-                    Sil
-                  </button>
-                </td>
               </tr>
             ))
           ) : (
@@ -92,4 +79,4 @@ const HomeCategory = () => {
   );
 };
 
-export default HomeCategory;
+export default CategoryById;

@@ -8,6 +8,7 @@ import CategoryEdit from "./Pages/Categories/Edit";
 import User from "./Pages/Users";
 import UserCreate from "./Pages/Users/Create";
 import UserEdit from "./Pages/Users/Edit";
+import CategoryById from "./Pages/Categories/CategoryById";
 
 export const router = createBrowserRouter([
     {
@@ -46,4 +47,8 @@ export const router = createBrowserRouter([
         path: '/users/edit/:user_id',
         element: <UserEdit />,
     },
+    {
+        path: 'categories/get/:category_id',
+        element: <CategoryById />,
+    }
 ]);

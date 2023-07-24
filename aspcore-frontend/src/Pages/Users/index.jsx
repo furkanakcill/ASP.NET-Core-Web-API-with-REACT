@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { deleteUser, findUsers } from "../../api/UserApi";
 import { useState, useEffect } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Home = () => {
   const [users, setUsers] = useState(false);
@@ -19,6 +20,29 @@ const Home = () => {
 
   return (
     <div className="container my-5">
+      <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="http://localhost:3000/">Home</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Link 
+            to={`/categories`}
+            className="nav-link" 
+            >
+              Categories
+            </Link>
+            <Link 
+            to={`/users`}
+            className="nav-link"
+            >
+              Users
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    <br /><br />
       <div className="d-flex align-items-center mb-5">
         <h5>Kullanıcı Listesi</h5>
         <div className="ms-auto">
@@ -45,7 +69,7 @@ const Home = () => {
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>{item.password}</td>
-                <td>{item.phone}</td>
+                <td>{item.phoneNumber}</td>
                 <td>{item.address}</td>
                 <td>
                   <Link

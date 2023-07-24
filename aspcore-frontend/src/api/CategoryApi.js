@@ -11,15 +11,16 @@ export const findCategories = async (setData) => {
   }
 };
 
-export const findCategory = async (id, setData) => {
+export const findCategory = async (id) => {
   try {
     const response = await axios.get(`/Categories/Get/${id}`);
-    setData(response.data);
+    return response.data;
   } catch (error) {
     console.log(error);
     toastError("Error in fetching Categories");
+    throw error;
   }
-}
+};
 
 export const deleteCategory = async (id) => {
   try {
