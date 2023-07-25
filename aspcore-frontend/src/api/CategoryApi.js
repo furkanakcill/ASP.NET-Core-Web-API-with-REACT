@@ -11,10 +11,10 @@ export const findCategories = async (setData) => {
   }
 };
 
-export const findCategory = async (id) => {
+export const findCategory = async (id, setState) => {
   try {
     const response = await axios.get(`/Categories/Get/${id}`);
-    return response.data;
+    setState(response.data)
   } catch (error) {
     console.log(error);
     toastError("Error in fetching Categories");

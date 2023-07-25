@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { createCategory } from "../../api/CategoryApi";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Create = () => {
     const [name, setName] = useState("");
@@ -12,6 +13,29 @@ const Create = () => {
 
     return (
         <div className="container my-5">
+            <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="http://localhost:3000/">Home</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Link 
+            to={`/categories`}
+            className="nav-link" 
+            >
+              Categories
+            </Link>
+            <Link 
+            to={`/users`}
+            className="nav-link"
+            >
+              Users
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    <br /><br />
             <div className="d-flex align-items-center mb-5">
                 <h5>Kategori Ekle</h5>
                 <div className="ms-auto">

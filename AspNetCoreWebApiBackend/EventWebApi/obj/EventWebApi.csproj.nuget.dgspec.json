@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\AspNetCoreWebApi\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj": {}
+    "D:\\GitHub\\ASP.NET-Core-Web-API-with-REACT\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\AspNetCoreWebApi\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj": {
+    "D:\\GitHub\\ASP.NET-Core-Web-API-with-REACT\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\AspNetCoreWebApi\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj",
+        "projectUniqueName": "D:\\GitHub\\ASP.NET-Core-Web-API-with-REACT\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj",
         "projectName": "EventWebApi",
-        "projectPath": "D:\\GitHub\\AspNetCoreWebApi\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj",
+        "projectPath": "D:\\GitHub\\ASP.NET-Core-Web-API-with-REACT\\AspNetCoreWebApiBackend\\EventWebApi\\EventWebApi.csproj",
         "packagesPath": "C:\\Users\\akcil\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\AspNetCoreWebApi\\AspNetCoreWebApiBackend\\EventWebApi\\obj\\",
+        "outputPath": "D:\\GitHub\\ASP.NET-Core-Web-API-with-REACT\\AspNetCoreWebApiBackend\\EventWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\akcil\\AppData\\Roaming\\NuGet\\NuGet.Config",

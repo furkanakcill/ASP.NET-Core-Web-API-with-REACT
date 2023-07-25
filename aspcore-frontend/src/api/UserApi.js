@@ -61,6 +61,6 @@ export const saveUser = async (id, values) => {
     toastSuccess("User Updated Successfully");
   } catch (error) {
     console.log(error);
-    toastError("Error in fetching Users");
+    toastError("Error in fetching Users hohohoho");
   }
 };
